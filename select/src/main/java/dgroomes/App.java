@@ -1,6 +1,7 @@
 package dgroomes;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +13,7 @@ import java.util.Arrays;
  */
 public class App {
 
-    private static final Logger log = org.slf4j.LoggerFactory.getLogger(App.class);
+    private static final Logger log = LoggerFactory.getLogger(App.class);
 
     private static final String JDBC_URL = "jdbc:postgresql:postgres";
 
@@ -36,13 +37,16 @@ public class App {
         log.info("Found this observation: {}", observation);
     }
 
-    public Observation selectAnObservation() throws SQLException {
-        var stmt = connection.createStatement();
-        var rs = stmt.executeQuery("SELECT description, notes FROM observations limit 1");
+    private static final String SQL = "SELECT description, notes FROM observations limit 1";
 
-        rs.next();
-        var description = rs.getString("description");
-        var notes = (String[]) rs.getArray("notes").getArray();
-        return new Observation(description, Arrays.asList(notes));
+    public Observation selectAnObservation() throws SQLException {
+        try (var stmt = connection.createStatement();
+             var rs = stmt.executeQuery(SQL)) {
+
+            rs.next();
+            var description = rs.getString("description");
+            var notes = (String[]) rs.getArray("notes").getArray();
+            return new Observation(description, Arrays.asList(notes));
+        }
     }
 }

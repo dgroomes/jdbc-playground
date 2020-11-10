@@ -1,5 +1,3 @@
-import org.gradle.api.JavaVersion.VERSION_15
-
 plugins {
     java
     application
@@ -11,8 +9,9 @@ repositories {
 }
 
 java {
-    sourceCompatibility = VERSION_15
-    targetCompatibility = VERSION_15
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(16))
+    }
 }
 
 val slf4jVersion = "1.7.30" // releases: http://www.slf4j.org/news.html
@@ -24,7 +23,7 @@ dependencies {
     implementation("org.slf4j:slf4j-api:$slf4jVersion")
     implementation("org.slf4j:slf4j-simple:$slf4jVersion")
     implementation("org.postgresql:postgresql:$postgresVersion")
-    implementation("org.apache.commons:commons-csv")
+    implementation("org.apache.commons:commons-csv:$commonsCsvVersion")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")

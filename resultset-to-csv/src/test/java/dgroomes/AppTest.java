@@ -1,9 +1,9 @@
 package dgroomes;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -24,16 +24,15 @@ class AppTest {
 
         var connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
         app = new App(connection);
-
     }
 
-    @Disabled
     @Test
-    void test() throws SQLException {
+    void test() throws SQLException, IOException {
         var observation = app.selectAnObservation();
 
         var expected = """
-                underwhelming observation\tthe sky is there,cats are not dogs"
+                "description","notes"
+                "underwhelming observation","{""the sky is there"",""cats are not dogs""}"
                 """;
         assertEquals(expected, observation);
     }

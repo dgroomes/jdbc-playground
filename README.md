@@ -23,8 +23,6 @@ See [select/README.md](select/README.md).
 
 ### `resultset-to-csv/`
 
-NOT YET IMPLEMENTED
-
 This sub-project shows how to convert the `ResultSet` returned by JDBC into CSV-formatted output.
 
 See [resultset-to-csv/README.md](resultset-to-csv/README.md).
@@ -33,4 +31,4 @@ See [resultset-to-csv/README.md](resultset-to-csv/README.md).
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* IN PROGRESS Implement the `resultset-to-csv/` sub-project
+* DONE Implement the `resultset-to-csv/` sub-project
