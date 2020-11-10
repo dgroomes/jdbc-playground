@@ -33,4 +33,4 @@ See [resultset-to-csv/README.md](resultset-to-csv/README.md).
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* Implement the `resultset-to-csv/` sub-project
+* IN PROGRESS Implement the `resultset-to-csv/` sub-project

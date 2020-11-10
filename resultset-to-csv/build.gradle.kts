@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion.VERSION_15
+
 plugins {
     java
     application
@@ -6,6 +8,11 @@ plugins {
 repositories {
     mavenLocal()
     jcenter()
+}
+
+java {
+    sourceCompatibility = VERSION_15
+    targetCompatibility = VERSION_15
 }
 
 val slf4jVersion = "1.7.30" // releases: http://www.slf4j.org/news.html
@@ -23,4 +30,16 @@ dependencies {
 
 application {
     mainClass.set("dgroomes.App")
+}
+
+tasks {
+
+    withType(Test::class.java) {
+        useJUnitPlatform()
+
+        testLogging {
+            showStandardStreams = true
+            exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+        }
+    }
 }
