@@ -6,8 +6,11 @@ This sub-project illustrates a simple program that executes a `select * from ...
 
 ### Instructions
 
-Requires: Java 15, Docker
+Requires: Java 16, Docker
 
-1. Start the Postgres database with `docker-compose up --renew-anon-volumes --detach`
-1. Run the program with `./gradlew run`
-1. Stop the database with `docker-compose down`
+1. Start the Postgres database:
+   * `docker-compose up --renew-anon-volumes --detach`
+1. Run the program:
+   * `./gradlew run`
+1. Stop the database:
+   * `docker-compose down`
