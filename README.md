@@ -32,3 +32,4 @@ See [resultset-to-csv/README.md](resultset-to-csv/README.md).
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * DONE Implement the `resultset-to-csv/` sub-project
+* IN PROGRESS Implement a sub-project to iterate over a result set using a cursor 
