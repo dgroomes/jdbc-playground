@@ -24,8 +24,9 @@ application {
     mainClass.set("dgroomes.Runner")
 }
 
-tasks {
+val customLogSysProp = "-Djava.util.logging.config.file=custom-logging.properties"
 
+tasks {
     withType(Test::class.java) {
         useJUnitPlatform()
 
@@ -33,5 +34,13 @@ tasks {
             showStandardStreams = true
             exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
         }
+    }
+
+    named<CreateStartScripts>("startScripts") {
+        defaultJvmOpts = listOf(customLogSysProp)
+    }
+
+    named<JavaExec>("run") {
+        jvmArgs = listOf(customLogSysProp)
     }
 }

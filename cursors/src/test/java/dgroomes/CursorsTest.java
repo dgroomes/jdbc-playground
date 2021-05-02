@@ -14,13 +14,7 @@ class CursorsTest {
     private static DestinationVisitor app;
 
     @BeforeAll
-    public static void setup() throws ClassNotFoundException, SQLException {
-        /*
-         * Load the Postgres JDBC driver class to exercise its static initializers so that it becomes registered in
-         * the DriverManager
-         */
-        Class.forName("org.postgresql.Driver");
-
+    public static void setup() throws Exception {
         var connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
         app = new DestinationVisitor(connection);
     }
@@ -29,6 +23,6 @@ class CursorsTest {
     void test() throws Exception {
         var rows = app.visit();
 
-        assertEquals(1, rows);
+        assertEquals(10, rows);
     }
 }
