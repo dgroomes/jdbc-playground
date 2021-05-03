@@ -16,17 +16,20 @@ public class DestinationVisitor {
 
     private final Connection connection;
 
-    /**
-     * @param connection a JDBC connection to the Postgres database
-     */
-    public DestinationVisitor(Connection connection) {
-        this.connection = connection;
+    public DestinationVisitor() {
+        this.connection = DbUtil.createConnection();
+        try {
+            this.connection.setAutoCommit(false); // Auto commit must be false to allow fetches to respect fetch size and use cursors
+        } catch (SQLException exception) {
+            throw new IllegalStateException("Something went wrong when setting 'auto commit'", exception);
+        }
     }
-
 
     // Select a sample of rows from the "destinations" table
     private static final String SELECT_SAMPLE_OF_DESTINATIONS = """
-            select name, region from destinations order by name limit 10
+            select name, region
+            from destinations
+            order by name limit 10
             """;
 
     /**
@@ -41,7 +44,7 @@ public class DestinationVisitor {
      *
      * @return the number of destinations visited
      */
-    public int visit() throws SQLException {
+    public int visit() {
         log.info("Visiting (iterating over) destinations");
         int count = 0;
         try (var stmt = connection.createStatement()) {
@@ -58,6 +61,8 @@ public class DestinationVisitor {
                     log.info("Visiting {}", destination);
                 }
             }
+        } catch (SQLException exception) {
+            throw new IllegalStateException("Something went wrong while trying to visit the destinations", exception);
         }
         return count;
     }
