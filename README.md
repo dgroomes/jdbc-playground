@@ -39,6 +39,13 @@ A Java program that reads from a SQLite database. Remember, a SQLite database is
 
 See the README in [sqlite/](sqlite/).
 
+### `health-check/`
+
+A Java program that uses JDBC to check if a Postgres database is up. In other words: a *health check*.
+
+See the README in [health-check/](health-check/).
+
+
 ## WishList
 
 General clean-ups, TODOs and things I wish to implement for this project:
