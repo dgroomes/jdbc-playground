@@ -19,18 +19,30 @@ The sub-projects include:
 
 This sub-project illustrates a simple program that executes a `select * from ...` statement using JDBC.
 
-See [select/README.md](select/README.md).
+See the README in [select/](select/).
 
 ### `resultset-to-csv/`
 
 This sub-project shows how to convert the `ResultSet` returned by JDBC into CSV-formatted output.
 
-See [resultset-to-csv/README.md](resultset-to-csv/README.md).
+See the README in [resultset-to-csv/](resultset-to-csv/).
+
+### `cursors/`
+
+This sub-project shows how to use a Postgres *cursor* to iterate over a result set from Java code.
+
+See the README in [cursors/](cursors/).
+
+### `sqlite/`
+
+A Java program that reads from a SQLite database. Remember, a SQLite database is just a file!
+
+See the README in [sqlite/](sqlite/).
 
 ## WishList
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * DONE Implement the `resultset-to-csv/` sub-project
-* IN PROGRESS Implement a sub-project to iterate over a result set using a cursor 
-  * I'm still not sure it's fetching incrementally or in one-shot..
+* DONE Implement a sub-project to iterate over a result set using a cursor 
+  * (Update: Postgres JDBC driver uses JUL and you can see its activity that way) I'm still not sure it's fetching incrementally or in one-shot..

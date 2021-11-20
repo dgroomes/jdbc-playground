@@ -1,11 +1,12 @@
 # sqlite
 
-SQLite JDBC example.
+A Java program that reads from a SQLite database. Remember, a SQLite database is just a file!
 
 ## Instructions
 
-* Use Java 17
-* `./gradlew run`
+1. Use Java 17
+2. Run the program:
+   * `./gradlew run`
 
 ## Reference
 
