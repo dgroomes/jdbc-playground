@@ -6,7 +6,7 @@ This sub-project illustrates a simple program that executes a `select * from ...
 
 ### Instructions
 
-Requires: Java 16, Docker
+Requires: Java 17, Docker
 
 1. Start the Postgres database:
    * `docker-compose up --renew-anon-volumes --detach`

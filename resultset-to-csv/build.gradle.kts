@@ -7,10 +7,10 @@ repositories {
     mavenCentral()
 }
 
-val slf4jVersion = "1.7.30" // releases: http://www.slf4j.org/news.html
-val junitVersion = "5.7.1" // releases: https://junit.org/junit5/docs/current/release-notes/index.html
-val postgresVersion = "42.2.20" // releases: https://jdbc.postgresql.org/ and https://search.maven.org/artifact/org.postgresql/postgresql
-val commonsCsvVersion = "1.8" // releases: https://commons.apache.org/proper/commons-csv/changes-report.html
+val slf4jVersion = "1.7.32" // SLF4J releases: http://www.slf4j.org/news.html
+val junitVersion = "5.8.1" // JUnit releases: https://junit.org/junit5/docs/current/release-notes/index.html
+val postgresVersion = "42.3.1" // Postgres JDBC releases: https://jdbc.postgresql.org/ and https://search.maven.org/artifact/org.postgresql/postgresql
+val commonsCsvVersion = "1.9.0" // Commons CSV releases: https://commons.apache.org/proper/commons-csv/changes-report.html
 
 dependencies {
     implementation("org.slf4j:slf4j-api:$slf4jVersion")

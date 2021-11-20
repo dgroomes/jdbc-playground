@@ -6,7 +6,7 @@ This sub-project shows how to convert the `ResultSet` returned by JDBC into CSV-
 
 ### Instructions
 
-Requires: Java 16, Docker
+Requires: Java 17, Docker
 
 1. Start the Postgres database:
    * `docker-compose up --renew-anon-volumes --detach`

@@ -18,7 +18,8 @@ class AppTest {
     public static void setup() throws ClassNotFoundException, SQLException {
         /*
          * Load the Postgres JDBC driver class to exercise its static initializers so that it becomes registered in
-         * the DriverManager
+         * the DriverManager. Update: I don't think this is needed. I think the JDBC API and JDBC driver implementations
+         * dropped this standard years ago in favor of a ServiceLoader mechanism.
          */
         Class.forName("org.postgresql.Driver");
 

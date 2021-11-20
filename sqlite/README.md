@@ -4,7 +4,7 @@ SQLite JDBC example.
 
 ## Instructions
 
-* Use Java 16
+* Use Java 17
 * `./gradlew run`
 
 ## Reference
