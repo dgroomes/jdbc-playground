@@ -17,5 +17,5 @@ dependencies {
 }
 
 application {
-    mainClass.set("dgroomes.HealthCheckApp")
+    mainClass.set("dgroomes.ConnectionCheckApp")
 }

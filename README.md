@@ -39,11 +39,11 @@ A Java program that reads from a SQLite database. Remember, a SQLite database is
 
 See the README in [sqlite/](sqlite/).
 
-### `health-check/`
+### `connection-check/`
 
-A Java program that uses JDBC to check if a Postgres database is up. In other words: a *health check*.
+Use the Postgres JDBC driver to check if the database can be connected to. Sometimes, this is called a *health check*.
 
-See the README in [health-check/](health-check/).
+See the README in [connection-check/](connection-check/).
 
 
 ## WishList
