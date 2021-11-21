@@ -8,18 +8,17 @@ Use the Postgres JDBC driver to check if the database can be connected to. Somet
 
 Requires: Java 17, Docker
 
-1. Run the program:
+1. Start the connection-check program:
    * `./gradlew run`
-   * Notice from the log output that the connection check yielded a "COULD NOT CONNECT ❌" message. 
+   * Notice from the log output that the connection check yields a "COULD NOT CONNECT ❌" message.
 2. Start the Postgres database:
+   * Open a new command-line window or tab and execute the following Docker command to start a Postgres database. 
    * `docker-compose up --renew-anon-volumes --detach`
-3. Run the program:
-   * `./gradlew run`
-   * Notice from the log output that the connection check yielded an "UP ✅" message. 
-4. Stop the database:
+   * Wait for a few seconds, and notice that the connection check is now yielding an "UP ✅" message! 
+3. Stop the database:
    * `docker-compose down`
 
-All put together, it will output something like this:
+Altogether, the connection-check program will output something like this:
 
 ```bash
 ./gradlew run
@@ -45,7 +44,7 @@ for checking if an exception is connection-related or something else. I think th
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * DONE Check continuously
-* Add to the instructions to start the connection check program, then over time start/stop the Postgres database and observe
+* DONE Add to the instructions to start the connection check program, then over time start/stop the Postgres database and observe
   the connection status (consider renaming to "connection check" instead of "health check"? Health check has better
   marketing)
 
