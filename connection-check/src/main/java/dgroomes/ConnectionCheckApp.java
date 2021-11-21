@@ -7,13 +7,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * A Java program that uses JDBC to check if a Postgres database is up. In other words: a *health check*.
+ * Use the Postgres JDBC driver to check if the database can be connected to. Sometimes, this is called a *health check*.
  */
-public class HealthCheckApp {
+public class ConnectionCheckApp {
 
     public static void main(String... args) throws InterruptedException {
-        var log = LoggerFactory.getLogger(HealthCheckApp.class);
-        var logPreamble = "Postgres health check status: ";
+        var log = LoggerFactory.getLogger(ConnectionCheckApp.class);
+        var logPreamble = "Postgres connection-check: ";
         var jdbcUrl = "jdbc:postgresql:postgres";
         var username = "postgres";
 
