@@ -7,7 +7,7 @@ repositories {
     mavenCentral()
 }
 
-val slf4jVersion = "1.7.32" // SLF4J releases: http://www.slf4j.org/news.html
+val slf4jVersion = "1.7.36" // SLF4J releases: http://www.slf4j.org/news.html
 val sqliteVersion = "3.36.0.3" // SQLite JDBC releases: https://github.com/xerial/sqlite-jdbc/releases
 
 
