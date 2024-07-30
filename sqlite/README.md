@@ -2,11 +2,15 @@
 
 A Java program that reads from a SQLite database. Remember, a SQLite database is just a file!
 
+
 ## Instructions
 
-1. Use Java 17
+1. Pre-requisite: Java 21
 2. Run the program:
-   * `./gradlew run`
+   * ```shell
+     ./gradlew run
+     ```
+
 
 ## Reference
 
