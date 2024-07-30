@@ -1,0 +1,9 @@
+[versions]
+slf4j = "2.0.13" # SLF4J releases: http://www.slf4j.org/news.html
+postgres-jdbc = "42.7.3" # Postgres JDBC releases: https://jdbc.postgresql.org/changelogs/
+
+
+[libraries]
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+postgres-jdbc = { module = "org.postgresql:postgresql", version.ref = "postgres-jdbc" }

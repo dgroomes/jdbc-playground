@@ -23,13 +23,7 @@ public class App {
         this.connection = connection;
     }
 
-    public static void main(String... args) throws ClassNotFoundException, SQLException {
-        /*
-         * Load the Postgres JDBC driver class to exercise its static initializers so that it becomes registered in
-         * the DriverManager
-         */
-        Class.forName("org.postgresql.Driver");
-
+    public static void main(String... args) throws SQLException {
         var connection = DriverManager.getConnection(JDBC_URL, "postgres", null);
         var app = new App(connection);
 
